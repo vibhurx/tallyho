@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+.action td, th {
+	border-bottom: 1px solid grey;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+td.topic {
+	width: 200px;
+	font-weight: bold
+}
+.inner td, .inner th {
+	width: 200px;
+	height: 11px; 
+	border: 1px solid grey;
+}
+th.inner {
+	text-align: center;
+}
+.action ol { counter-reset: item }
+.action li {
+	display: block;
+	padding-bottom: 12px;
+}
+.action li:before { 
+	content: counters(item, ".") " "; 
+	counter-increment: item; 
+}
+.freenetlaw {
+	font-size: 9pt;
+	text-align:center;
+	margin-top:30px;
+	text: 'Credit: This document was created using a Contractology template available at http://www.freenetlaw.com.';
+}
+	

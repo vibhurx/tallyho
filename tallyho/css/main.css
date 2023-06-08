@@ -1,0 +1,529 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	background: #EFEFEF;
+}
+
+#page
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: white;
+	border: 1px solid #C9E0ED;
+}
+
+#header
+{
+	margin: 0;
+	padding: 0;
+	border-top: 3px solid #C9E0ED;
+}
+
+#content
+{
+    padding: 20px;
+}
+
+#sidebar, #information 
+{
+	padding: 20px 20px 20px 0;
+}
+
+#footer
+{
+	padding: 10px;
+	margin: 10px 20px;
+	font-size: 0.8em;
+	text-align: center;
+	border-top: 1px solid #C9E0ED;
+}
+
+#logo
+{
+	padding: 10px 20px;
+	/* font-size: 200%; */
+}
+
+#mainmenu
+{
+	background:white url(bg.gif) repeat-x left top;
+}
+
+#mainmenu ul
+{
+	padding:6px 20px 5px 20px;
+	margin:0px;
+}
+
+#mainmenu ul li
+{
+	display: inline;
+}
+
+#mainmenu ul li a
+{
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:5px 8px;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+	color: #6399cd;
+	background-color:#EFF4FA;
+	text-decoration:none;
+}
+
+/* start of active menu */
+#mainmenu ul { list-style: none; margin: 0; padding: 0; position: relative; height: 24px; } 
+#mainmenu ul li { display: block; height: 24px; float: left; overflow: visible; }
+#mainmenu ul li:hover > ul { display: block; }
+#mainmenu ul li a { float: left; display: block; }
+#mainmenu ul li ul { display: none; position: absolute; top: 100%; background: #666; color: #fff; height: auto;}
+#mainmenu ul li ul li a { color: #ccc; padding: 4px 14px; display: block; }
+#mainmenu ul li ul li.active a,
+#mainmenu ul li ul li a:hover { color: #666; }
+/* end of active menu */
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+div.form .rememberMe label
+{
+	display: inline;
+}
+
+div.view
+{
+/* 	padding: 10px; */
+	margin: 2px 0;
+/* 	border: 1px solid #C9E0ED; */
+	background: #E5F1F4;
+}
+
+div.view :hover {
+	background: #D7DDE4;
+}
+
+div.view table{
+	margin:1px;
+	padding:15px
+ }
+div.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
+}
+
+div.search-form
+{
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	background: #B7D6E7;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #298dcd;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#EFFDFF;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 2px;
+}
+
+.operations li a
+{
+	font: 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 12px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operations li a:visited
+{
+	color: #0066A4;
+}
+
+.operations li a:hover
+{
+	background: #80CFFF;
+}
+
+
+.operationss
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operationss li
+{
+	padding-bottom: 2px;
+}
+
+.operationss li a
+{
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: table-cell;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operationss li a:visited
+{
+	color: #0066A4;
+}
+
+.operationss li a:hover
+{
+	background: #EEE;
+}
+
+
+tr.flash-error td
+{
+	color:red;
+}
+
+.cssMatchWinner {
+	font-weight:bold;
+	color:darkgreen;
+}
+
+.cssMatchFinished {
+	color:darkgrey;
+}
+
+.cssMatchOngoing {
+	color:green;
+}
+
+.toplogo {
+	width: 146px;
+	height:48px;
+}
+.toplogobeta {
+	width: 186px;
+	height:48px;
+}
+
+.sign001{
+	display:inline;
+	float:right;
+	width:260px;
+	height:30px;
+	text-align: right;
+	border: 0px solid;
+}
+
+.sign001 input{
+	
+/* 	height:20px; */
+/* 	font-size:10pt; */
+/* 	text-indent:2px; */
+/* 	padding: 0; */
+}
+
+.sign001 a {
+	font-weight:normal;
+	font-weight:normal;
+	font-size:12px;
+	text-decoration:none;
+	text-indent:5px;
+}
+
+.sign001, .btn {
+	background:green;
+	color:white;
+	width:98%;
+	border:0px solid gray;
+	border-radius:3px;
+	font-size:10pt;
+	height: 50px;
+	padding:15px;
+}
+
+
+.sign001 input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: #888 ;
+    width:90px;
+	height:20px;
+	font-size:10pt;
+	border:0px solid green;
+	border-radius:3px;
+	text-indent:2px;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+a.table-link {
+	cursor: pointer; 
+	text-decoration: underline;
+}
+
+table.topmenu {
+	background-color: none;
+	margin: 0 0 0 0;
+	min-width: 500px;
+	width:100%;
+	max-width:920px;
+	border: 0px solid;
+}
+
+div.submenu {
+	background-color: #666;
+}
+/*style the main menu*/
+.myMenu {
+	margin:0;
+	padding:0;
+	border: 0`px solid yellow;
+}
+
+.myMenu li {
+	list-style:none;
+	float:left;
+	font:11px Arial, Helvetica, sans-serif #111;
+}
+
+.myMenu li a:link, .myMenu li a:visited, .myMenu li span {
+	display:block;
+	text-decoration:none;
+	background-color:#09F;
+	padding: 0.5em 2em;
+	margin:0;
+	border-right: 1px solid #fff;
+	color:#FFF;
+}
+
+.myMenu li a:hover {
+	background-color:#0CF;	
+}
+
+/*style the sub menu*/
+.myMenu li ul {
+	position:absolute;
+	visibility:hidden;
+	border-top:1px solid #fff;
+	padding:0;
+}
+
+.myMenu li ul li {
+	display:inline;
+	float:none;
+}
+
+.myMenu li ul li span a:link, .myMenu li ul li a:visited, .myMenu li ul li span {
+	background-color:#09F;
+	width:auto;
+}
+
+.myMenu li ul li a:hover {
+	background-color:#0CF;	
+}
+
+.myMenu li div {
+	display: inline;
+	float: right;
+	height:32px;
+	width:32px;
+}
+
+#submenu_sidemenu {
+	height:32px;
+	width:32px;
+	background:url(../images/sideMenu.png) no-repeat;'
+}
+
+#submenu_sidemenu:hover {
+	background:url(../images/sideMenu-negative.png) no-repeat;'
+}
+
+.viewAction {
+	display:inline;
+	float:right;
+	text-align: right;
+}
+
+.mainSubmitAction {
+	display:inline;
+	float:right;
+	text-align: center;
+	border-radius: 5px;
+	height: 40px;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	width: 100%;
+	background-color: darkgreen;
+}
+
+input , select{
+	font-size: 16px;
+}
+
+div.flash {
+	padding: 20px;
+	color: darkblue;
+	background: lightyellow;
+	border-radius: 5px;
+	margin: 10px 10px 10px 10px;
+}
+
+div.error {
+	color: red;
+}
+
+div.warning {
+	color: darkyellow;
+}
+ 
+/*  Responsive UI for the top section of the homepage */
+ div.thisIsHowContainer {
+    min-height: 400px;
+    padding: 10px;
+  }
+
+  div.thisIsHow {
+    width: 45%;
+/*     padding: 30px; */
+    float: left;
+    min-height: 200px;
+    max-height: 400px;
+    text-align: left;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 15px;
+    text-shadow: none;
+  }
+  
+@media (min-width: 801px) and (max-width: 1200px) {
+  div.thisIsHowContainer {
+    min-height: 400px;
+  }
+  div.thisIsHow {
+    width: 50%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  div.thisIsHowContainer {
+    min-height: 400px;
+  }
+  div.thisIsHow {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  div.thisIsHowContainer {
+    min-width: 446px;
+  }
+  div.thisIsHow {
+    width: 100%;
+  }
+}

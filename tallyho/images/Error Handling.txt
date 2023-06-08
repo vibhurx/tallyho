@@ -1,0 +1,8 @@
+On a List View:
+	Hyperlink/Action with view transition:
+		On Error: Show a error view
+		On Success: Show the intended view
+
+	Hyperlink/Action without view transition
+		On Error: Show an "in-location/on-page" error
+		On Success: Show a "in-location/on-page" success

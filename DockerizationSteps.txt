@@ -1,0 +1,33 @@
+Our goal is to create docker image of the tallyho application:
+
+1) Create a Docker-compose File:
+
+   defines the services:
+    i) Server: creating a separate DockerFile for php-apache setup and 
+       adding required extensions such as mysqli and Yii framework.
+
+   ii) Database: Mysql image from docker hub.
+
+   iii)phpmyadmin image from docker hub.
+2) Creating an Image of the tallyho application with the docker-compose up command.
+
+3) Publishing the created Image to the Azure container registry:
+      
+    --> Tag the image created in the above step.
+    --> Push the image to the Azure container registry.
+4) Deploy the image from ACR to the container Instance.  
+
+
+Guide to deploy Image from Azure pipeline to azure container registry.
+https://youtu.be/XyVLQhDhQTU
+
+Blog post:
+https://www.coachdevops.com/2021/09/how-to-upload-docker-images-into-azure.html
+
+
+
+
+Setting up a LAMP Stack from Scratch using Docker
+https://youtu.be/zWyggxV51oQ
+
+    

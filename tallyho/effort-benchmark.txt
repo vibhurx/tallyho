@@ -1,0 +1,209 @@
+04-Aug-15:	(8h) Activated fee-payment tracking for the players
+	Module:	/participant/draw/index
+	Justification:
+		1.	Generated new model and table structure
+		2.	Generated a new module "Payment"
+		3.	Payment audit-trail added
+		4.	Popup form added to payment-status
+		5.	Popup form fixed for aita-points adjustment
+		6.	Removed some convoluted javascript for row cell editing logic
+
+31-Jul-15:	(8h) Added Start_date & Court_no to matches  and the scheduling process
+	Module:	/tour/category/draw/service
+		1.	Popup dialog on the grid control
+		2.	Ajax handling for both the fields
+		3.	New calendar widget to popup
+		4.	New web-service to update match fields
+		
+15-Jul-15:	(3h) Add a new web-service to register players
+	Module: /register/register/wsRegister
+		1. Copied the existing action "actionRegistration" and removed the organization-contact
+			registration and web-view parts.
+
+16-Jul-15: (?h)	Auto schedule matches of a category
+	Module:	/tour/category/draw/schedule
+		1.	Changes in >2 tables (category->start_date, match->start_date)
+		2.	Algorithmic logic for scheduling
+		3. 	Graphic display of calendar
+		
+**** GAP OF MORE THAN 3 MONTHS ****
+
+20-Apr-15:	(4h)	Add a new web-service to adjust score (like Undo)
+	Module:	/match/default/wsAdjustScore
+	Justification:
+		1.	There was a deliberation on "undo" feature which required data-model modification
+		2.	Defined the feature from the scratch (had to come up with the view design etc.)
+
+19-Apr-15:	(1h)	Add status of the match in the match score web-service
+	Module:	/match/default/wsIndex
+	
+19-Apr-15:	(1h)	Add players' names in the web-service for match score
+	Module:	/match/default/wsIndex
+
+31-Mar-15:	()	Stabilize user management - fix redirections
+	Done: probably took 2 days
+	
+
+30-Mar-15:	(4h)
+	Module:	participant/enrol/seachPlayer (ajax)
+	Task:	Implement a better player-search feature as popup (filter list as you type)
+	Justification:
+		1. First time tried and implemented
+		2. Did not use available auto-filter modules (earlier trials did not go very well)
+		3. Ajax save() took some deliberation on whether to ajax or not.
+		
+		
+30-Mar-15:	(2h)
+	Module:	/tour/category/default/delete
+	Task:	Remove cascaded deletion bug in Category delete action
+	Justification:
+		1. Complete data had to be refreshed several times.
+		
+
+22-Mar-15:	(3h)
+	Module:	match/default/score
+	Task:	Walkover
+	Justification:
+		1. Revamped the code for promoting a player to the next round
+
+
+28-Feb-15
+	Module:	/match/default/transfer
+	Task:	Single click transfer of all the qualified players to the main draw.
+
+27-Feb-15	(6h)
+	Module:	protected/js/drawControl.js and /match/default/transfer
+	Task:	User transfers a qualifier to the main draw one-by-one
+	Justification:
+		1. A new action had to be added to Match DefaultController
+		2. Had to figure out the appropriate location in the main draw where one should be moved.
+			Right now the transferred player goes to play the weakest player with empty opponent
+		3. Spend some time in curving the draw-tree links. :-) Also spend some time beautifying draw items.
+		4. Had to figure out SQLs for finding the match using just the participant ID
+		5. Also had to figure out SQLs for existence of the participant in the main draw so that duplicate is avoided
+		6. Also to figure out the empty slots to be filled first
+
+27-Feb-15	(4h)
+	Module:	protected/js/drawControl.js
+	Task:	Display the winners in the last level of qualifying and main draw
+	Justification:
+		1. It needed introduction of category.qdraw_size
+		2. A complex condition to identify penultimate level and winner to update the next/last level
+		3. Logic for qualifying draw tree changed
+
+27-Feb-15	(2h)
+	Module:	/match/default/index
+	Task:	Revert the view from fancybox to normal view
+
+27-Feb-15	(3h)
+	Module:	protected/js/drawControl.js
+	Task:	Highlight winners in tree-view mode (2h) & show scores in the tooltip (tipsy) (1h)
+
+26-Feb-15	(3h)
+	Module:	tour/controller/DefaultController
+	Task:	Added JSON web-services for tour-list and category-list
+	
+26-Feb-15	(1h)
+	Module:	match/controller/DefaultController
+	Task:	Added JSON web-services for match-list and set-list
+	
+24-Feb-15	(6h)
+	Module:	protected/js/scoring.js
+	Task: 	Implement match end-condition with AJAX updates
+	Justification:
+		1. There were many bugs, clearing took time
+
+22-Feb-15	(1d)
+	Module:	protected/js/scoring.js	
+	Task:	AJAX implementation to update set score to DB
+			1. Must support web-services
+		
+20-Feb-15	(3h)
+	Module:	partiticipant/draw/index	
+	Task: 	Link on enrol popup for new Player works
+	Justification
+		1. Had to invent a workaround to create a fancybox popup from another one (delay etc.)
+
+20-Feb-15	(2h)
+	Module:	user/user/*					
+	Task: 	Player & contact profile view/update
+
+14-Feb-15	(3h)
+	Module:	organization/default/view	
+	Task: 	Add contact to org	
+
+14-Feb-15	(2h)
+	Module:	organization/default/view	
+	Task: 	Basic Organization & contact view
+
+06-Feb-15	(4d)
+	Module:	protected/js/scoring.js		
+	Task: 	Selecting a match to add sets and scores
+	Justification:
+		1. Redesigning by separating data-structure from visual presentation
+		2. Implementing in JavaScript class/object notation.
+		3. Yet to implement set end-condition		
+
+05-Feb-15	(4d)
+	Module:	tour/category/draw/save		
+	Task: Save changes in matches with new position	
+	Reason for high effort:
+		1. Comparing old and new position took some restructuring
+		2. Made drawTree(), treeStructureData() and treeLinkData() more generic in nature
+		3. Modified assignPlayers() to accomodate view-tree as well where the assignment
+			is based on the sequence
+		4. Building json for player positions (main & qual) and handling it is the 
+			controller
+	Code size of drawControl.js has reduced to half due to optimization at the code level :)
+
+26-Jan-15	(2d)
+	Module:	tour/category/draw/make		
+	Task: 	Make drag-drop possible for players in JS
+	Reason for high effort:
+		1. drag-drop was not possible with match as a <g> element holding 2 positions
+		2. changed the design of the node with 1 additional <rect>
+
+25-Jan-15	(2h)
+	Module:	tour/category/draw/view		
+	Task: 	Assign players to the draw-tree nodes
+
+26-Jan-15	(2h)
+	Module:	-do-
+	Task: 	Defect related to Javascript
+
+25-Jan-15	(1h)
+	Module:	tour/category/draw/view		1h
+	Task:	Move the MVC from participant to category
+
+24-Jan-15	(3h)
+	Module:	tour/default/index	
+	Task: 	AJAX for AITA points updation to avoid page reload
+
+24-Jan-15	(4h)
+	Module:	tour/default/index
+	Task: 	AJAX for Wildcard update
+
+24-Jan-15	(2h)
+	Module:	tour/default/index
+	Task: 	Limit Wildcard entries for a category to 4
+
+23-Jan-15	(4h)
+	Module:	participant/enrol/createFor	
+	Task: 	AJAX & FancyBox for enroling others
+
+23-Jan-15	(4h)
+	Module:	tour/category/draw/make	
+	Task: 	Wizard like navigation
+
+23-Jan-15	
+	Module:	tour/category/draw/make		(1h)
+	Task: 	Move MVC from participant to category
+
+
+Redesign module to link contacts with organization													2 weeks
+Redesign to have contacts as a user-type instead of organization									4 days
+Total effort for the modules - tour, category, participant, user-contact							3 months
+Integrating YUM with the application																15 days
+Total effort for the initial setup with all the modules												2 months
+Data modeling and data design																		15 days
+Redesign data-model to omit 'Profile'																5 days

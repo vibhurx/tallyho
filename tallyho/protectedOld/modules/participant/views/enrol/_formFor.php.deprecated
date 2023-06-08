@@ -1,0 +1,58 @@
+<div class="form">
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'participant-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableAjaxValidation'=>false,
+	));
+?>
+<?php echo $form->errorSummary($participant); ?>
+<?php echo $form->hiddenField($participant,'tour_id');?>
+<?php echo $form->hiddenField($participant,'category'); ?>
+				
+	<table>
+		<tr>
+			<td>
+				<?php echo $form->labelEx($tour,'location'); ?>
+				<?php echo $tour->location;?>
+			</td>
+			<td>
+				<?php echo $form->labelEx($tour,'start_date'); ?>
+				<?php echo $tour->start_date;?>
+			</td>
+			<td>
+				<?php echo $form->labelEx($participant,'category'); ?>
+				<?php echo Lookup::item('AgeGroup', $participant->category)?>
+				<?php echo $form->error($participant,'category'); ?>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan=2>
+				<?php echo $form->labelEx($participant,'player_id'); ?>
+				<div id="player" style="display: inline">
+				    <?php echo $form->dropDownList($participant,
+			    			'player_id', 
+			    			CHtml::listData(Player::model()->findAll(), 'id', 'given_name'),
+							array('prompt'=>'Select')
+			    	  );
+				    ?>
+				    <i>Player not in the list? 
+				    <?php 
+				    	echo CHtml::link("Create",$this->createUrl("//player/player/create"));
+				    ?>.@todo - put a link to player creation</i>
+				</div>
+				<?php echo $form->error($participant,'player_id'); ?>
+			</td>
+			<td class="row buttons">
+				<?php echo CHtml::submitButton($participant->isNewRecord ? 'Enrol' : 'Save'); ?>
+			</td>
+		</tr>	
+	</table>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->

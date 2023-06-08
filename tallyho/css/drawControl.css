@@ -1,0 +1,51 @@
+@CHARSET "ISO-8859-1";
+
+svg {
+	//background-color: #BBFFBB
+}
+
+rect.edges {
+  fill: lightblue;
+  stroke: steelblue;
+  stroke-width: 1px;
+}
+
+rect.box {
+  fill: none;
+  stroke: none;
+  stroke-width: 1px;
+}
+
+.main, .qualifying text {
+  font: 10px sans-serif;
+  color: white;
+  text-anchor: start;
+}
+
+  
+.link {
+  stroke: steelblue;
+  fill: none;
+  stroke-width: 1px;
+}
+
+.canvas {
+    position: absolute;
+}
+.popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 220px;
+    border: 1px #ccc solid;
+    border-radius: 6px;
+    box-shadow: #333 2px 2px 4px;
+    padding: 8px;
+    font-family: arial, helvetica, sans-serif;
+    font-size:12px;
+}
+.popup h2 {
+    margin: 0 0 1rem 0;
+}
+ 

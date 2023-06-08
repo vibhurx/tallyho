@@ -1,0 +1,43 @@
+1.	Add Participant.seed_points for the organizer to be able to perform seeding process
+	If aita_regulated then use AITA points (or use club's own point-system).
+	SQL: alter table participant add column seed_points int(8) NOT NULL DEFAULT 0 after category;
+
+2.	Add Tour.is_aita & Category.is_aita_regulated (boolean).
+	If yes, then pick ranking/points from membership where org_id = AITA
+	Else, pick the ranking/points from membership where org_id = organization.id
+	SQL:
+	- alter table tour add column `is_aita` boolean NOT NULL DEFAULT true after start_date;
+	- alter table category add column `is_aita` boolean NOT NULL DEFAULT true after start_date;
+
+2a.	Add is_aita field in Tour _form as a dropdown with values "Yes"/"No"
+	Add is_aita field in Category _form as a dropdown with values "Yes"/"No" 
+	only if Tour->is_aita = true. Else it is fixed to false (="No")
+
+
+3.	Player-list:: if aita_regualated then copy points from membership where org_id = AITA
+	(Currently being copied from player.aita_points !!! NOT A GOOD IDEA)
+
+4.	When the organizer changes the points the change be affected only in Participant table not 
+	in the Player table. Default value comes from Membership(m) where m.player_id = player.id
+
+5.	Is the seeding on the basis of the point-system maintained by the club or the ranking.
+	Provide Category.seed_basis(0: points(desc), 1: rank(asc)).
+
+6.	Member-or-not comes from membership table.
+
+
+
+
+
+Remake draw on the following conditions
+	- a new enrollment
+	- a new paid/unpaid status
+	- a new seeding
+
+Throw a warning when a draw-bracket already exists
+	- what should be the condition
+		- Match.count(*) > 0 where tour_id and category match.
+
+
+Met in the flight: Pradeep Debata (Investment Banker)
+pradeep.debata@cambridgejbs.net

@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  php-apache-tallyho:
+    container_name: php-apache-tallyho
+    build:
+        context: ./tallyho
+        dockerfile: Dockerfile
+    depends_on:
+        - db
+    # volumes:
+    #     - .:/var/www/
+    ports:
+        - 8000:80
+    networks:
+      - tallyho-lamp
+  db:
+    container_name: db
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: tally64g_tallyho
+      MYSQL_USER: tally64g_tallyho
+      MYSQL_PASSWORD: c!90zog*t^P
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    ports:
+        - "9906:3306"
+    volumes:
+      - "./tallyho/data:/docker-entrypoint-initdb.d"
+    networks:
+      - tallyho-lamp
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - '8080:80'
+    restart: always
+    environment:
+        PMA_HOST: db
+        PMA_PORT: 3306
+    depends_on:
+        - db
+    networks:
+      - tallyho-lamp
+networks:
+  tallyho-lamp:
+    driver: bridge  
